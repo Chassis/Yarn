@@ -1,5 +1,5 @@
 # Yarn extension for Chassis
-The Yarn extension automatically sets up your Chassis instance to be able to use [https://github.com/yarnpkg/yarn](yarn) inside your Chassis box.
+The Yarn extension automatically sets up your Chassis instance to be able to use [yarn](https://github.com/yarnpkg/yarn) inside your Chassis box.
 
 ## Activation
 Ensure you have a Chassis instance set up locally already and that you have the Nodejs extension installed. https://github.com/Chassis/nodejs
