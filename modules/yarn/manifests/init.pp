@@ -1,4 +1,5 @@
 class yarn (
+	$config,
 	$path = "/vagrant/extensions/yarn",
 ) {
 	exec { 'install yarn':
