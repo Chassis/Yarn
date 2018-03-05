@@ -2,10 +2,17 @@ class yarn (
 	$config,
 	$path = "/vagrant/extensions/yarn",
 ) {
-	exec { 'install yarn':
-		path        => [ '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/' ],
-		command     => 'npm install -g yarn',
-		require     => [ Class['nodejs'] ],
-		unless  => 'which yarn',
+	if ( ! empty($config[disabled_extensions]) and 'chassis/yarn' in $config[disabled_extensions] ) {
+		exec { 'uninstall yarn':
+			path        => [ '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/' ],
+			command     => 'npm uninstall -g yarn',
+		}
+	} else {
+		exec { 'install yarn':
+			path        => [ '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/' ],
+			command     => 'npm install -g yarn',
+			require     => [ Class['nodejs'] ],
+			unless  => 'which yarn',
+		}
 	}
 }
