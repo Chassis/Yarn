@@ -28,3 +28,20 @@ vagrant provision
 ```
 
 Yarn has now been installed inside your Chassis box.
+
+
+## Installing Yarn dependencies
+
+You can have Chassis automatically run `yarn install` in a number of directories in your project by adding a list of directories in one of your [yaml](http://docs.chassis.io/en/latest/config/) files. e.g.
+```
+yarn:
+    paths:
+        # Use absolute paths on the VM. For a default Chassis installation this should be:
+        - /vagrant/content/plugins/yourplugin
+        - /vagrant/content/themes/atheme
+        # If you're using paths (http://docs.chassis.io/en/latest/config/#paths) in Chassis this should be:
+        - /chassis/content/plugins/yourplugin
+        - /chassis/content/themes/atheme
+```
+
+You'll need to run `vagrant provision` for those to be installed if you'd added them after your first initial Chassis `vagrant up`.
