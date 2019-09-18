@@ -25,7 +25,7 @@ class yarn (
 # Puppet 3.8 doesn't have the .each function and we need an alternative.
 define install_yarn {
   if is_hash($name) {
-    exec { "Executing yarn ${name[command]}":
+    exec { "Executing ${name[command]}":
       path      => [ '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/' ],
       cwd       => $name[path],
       command   => $name[command],
