@@ -28,7 +28,7 @@ define install_yarn {
     exec { "Executing yarn ${name[command]}":
       path      => [ '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/' ],
       cwd       => $name[path],
-      command   => "yarn ${name[command]}",
+      command   => $name[command],
       require   => [ Exec['install yarn'] ],
       logoutput => true
     }
