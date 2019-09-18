@@ -45,3 +45,14 @@ yarn:
 ```
 
 You'll need to run `vagrant provision` for those to be installed if you'd added them after your first initial Chassis `vagrant up`.
+
+## Custom Yarn commands
+
+You can have Chassis automatically run custom commands in a number of directories in your project by adding a list of directories in one of your [yaml](http://docs.chassis.io/en/latest/config/) files. e.g.
+```
+yarn:
+    paths:
+        - path: /vagrant/content/plugins/yourplugin
+          command: 'yarn install && yarn compile'
+        - /vagrant/content/themes/atheme
+```
