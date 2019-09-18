@@ -53,6 +53,6 @@ You can have Chassis automatically run custom commands in a number of directorie
 yarn:
     paths:
         - path: /vagrant/content/plugins/yourplugin
-		  command: 'yarn install && yarn compile"
+          command: 'yarn install && yarn compile"
         - /vagrant/content/themes/atheme
 ```
